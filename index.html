@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#eee9df">
+  <meta name="description" content="A fictional, interactive furniture showroom demo. Choose the cut on one walnut slab, then see the table take shape.">
+  <title>Cutline — Where would you make the cut?</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="demo-banner"><span>HWS / SHOWROOM STUDY</span><span>FICTIONAL STUDIO · ILLUSTRATIVE SLAB</span></div>
+  <header class="site-header">
+    <a class="wordmark" href="#top" aria-label="Cutline home">
+      <span class="mark" aria-hidden="true">C<span>/</span></span>
+      <span>CUTLINE<small>WOODWORKS · OREGON</small></span>
+    </a>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="#configurator">The configurator</a>
+      <a href="#how-it-works">How it works</a>
+      <a class="nav-contact" href="#project-card">Start a project <span aria-hidden="true">↗</span></a>
+    </nav>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu"><span></span><span></span></button>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+      <a href="#configurator">The configurator</a>
+      <a href="#how-it-works">How it works</a>
+      <a href="#project-card">Start a project ↗</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="intro section-wrap">
+      <div class="intro-copy">
+        <p class="eyebrow"><span class="eyebrow-line"></span> One slab. One considered cut.</p>
+        <h1>Where would<br>you make <em>the cut?</em></h1>
+        <p class="intro-lede">A table starts long before the first tool touches wood. Find the length that fits your room, keep the grain you love, and see it take shape.</p>
+        <a class="text-link" href="#configurator">Choose your cut <span aria-hidden="true">↓</span></a>
+      </div>
+      <div class="intro-note" aria-label="Slab details">
+        <span class="note-index">SAMPLE / 07</span>
+        <p>Claro walnut<br><span>Air-dried · Oregon</span></p>
+        <span class="note-rule"></span>
+        <p class="note-small">A fictional slab made for this interactive study.</p>
+      </div>
+      <div class="intro-stamp" aria-hidden="true">MADE<br>TO MEASURE<br><span>✳</span></div>
+    </section>
+
+    <section class="configurator section-wrap" id="configurator" aria-labelledby="config-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow"><span class="eyebrow-line"></span> The actual piece</p>
+          <h2 id="config-title">Keep the knot?</h2>
+        </div>
+        <p class="section-summary" id="config-summary">Drag the cut. The board stays the same; only the length changes.</p>
+      </div>
+
+      <div class="workbench">
+        <div class="workbench-top">
+          <div class="slab-meta"><span class="status-dot"></span> SLAB 07 <span class="meta-divider">/</span> WALNUT <span class="meta-divider">/</span> ONE OF ONE</div>
+          <div class="view-switch" role="group" aria-label="View">
+            <button class="view-button is-active" type="button" data-view="slab" aria-pressed="true">01 <span>Slab</span></button>
+            <button class="view-button" type="button" data-view="table" aria-pressed="false">02 <span>Table</span></button>
+          </div>
+        </div>
+
+        <div class="stage" id="stage">
+          <div class="stage-grid" aria-hidden="true"></div>
+          <div class="view-panel slab-panel is-visible" id="slab-panel" aria-label="Walnut slab with adjustable cut line">
+            <svg class="slab-art" viewBox="0 0 1200 560" role="img" aria-labelledby="slab-title slab-desc">
+              <title id="slab-title">Illustrated walnut slab number 07</title>
+              <desc id="slab-desc">A warm brown walnut board with flowing grain and a fork-shaped knot near its far end. A movable cut line marks the selected table length.</desc>
+              <defs>
+                <linearGradient id="wood" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#9d6038"/>
+                  <stop offset=".16" stop-color="#b8794c"/>
+                  <stop offset=".52" stop-color="#8e512f"/>
+                  <stop offset=".8" stop-color="#a96b40"/>
+                  <stop offset="1" stop-color="#754329"/>
+                </linearGradient>
+                <linearGradient id="woodEdge" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#563420"/>
+                  <stop offset="1" stop-color="#38251c"/>
+                </linearGradient>
+                <linearGradient id="shine" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#f4c28a" stop-opacity=".28"/>
+                  <stop offset=".5" stop-color="#f4c28a" stop-opacity="0"/>
+                  <stop offset="1" stop-color="#301b12" stop-opacity=".2"/>
+                </linearGradient>
+                <pattern id="hatch" width="12" height="12" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
+                  <rect width="12" height="12" fill="#1d2520" fill-opacity=".80"/>
+                  <path d="M0 0V12" stroke="#d2b77f" stroke-opacity=".25" stroke-width="2"/>
+                </pattern>
+                <clipPath id="board-clip">
+                  <path d="M92 147 C143 137 197 145 256 141 C314 137 360 149 423 144 C493 138 542 147 605 143 C680 138 732 145 795 141 C867 136 922 145 981 139 C1038 133 1088 141 1111 151 L1105 366 C1057 381 1010 370 956 376 C900 383 847 370 790 376 C726 383 676 370 612 376 C550 382 493 370 430 376 C365 383 316 371 254 377 C191 383 137 376 94 367 Z"/>
+                </clipPath>
+              </defs>
+              <ellipse cx="607" cy="405" rx="535" ry="38" fill="#251d18" opacity=".14"/>
+              <path d="M94 367 C137 376 191 383 254 377 C316 371 365 383 430 376 C493 370 550 382 612 376 C676 370 726 383 790 376 C847 370 900 383 956 376 C1010 370 1057 381 1105 366 L1104 392 C1054 406 1008 395 954 401 C899 408 847 395 789 401 C725 408 674 395 611 401 C548 407 491 395 429 401 C364 408 314 396 252 402 C190 408 138 400 94 392 Z" fill="url(#woodEdge)"/>
+              <path d="M92 147 C143 137 197 145 256 141 C314 137 360 149 423 144 C493 138 542 147 605 143 C680 138 732 145 795 141 C867 136 922 145 981 139 C1038 133 1088 141 1111 151 L1105 366 C1057 381 1010 370 956 376 C900 383 847 370 790 376 C726 383 676 370 612 376 C550 382 493 370 430 376 C365 383 316 371 254 377 C191 383 137 376 94 367 Z" fill="url(#wood)"/>
+              <g clip-path="url(#board-clip)">
+                <image href="assets/walnut-surface.svg" x="92" y="138" width="1019" height="241" preserveAspectRatio="none"/>
+                <g transform="matrix(1.019 0 0 1.004 92 138)" fill="none" stroke-linecap="round">
+                  <path d="M930 40 C947 32 966 40 976 54 C986 69 988 84 998 92 C986 87 980 71 971 60 C961 49 947 49 937 58 C927 67 926 79 934 88 C942 96 954 98 965 93" stroke="#422619" stroke-width="13" opacity=".8"/>
+                  <path d="M930 40 C947 32 966 40 976 54 C986 69 988 84 998 92 C986 87 980 71 971 60 C961 49 947 49 937 58 C927 67 926 79 934 88 C942 96 954 98 965 93" stroke="#d99a62" stroke-width="2.8" opacity=".85"/>
+                  <path d="M936 42 C952 38 967 45 973 57 C980 69 983 82 993 92" stroke="#f2c38c" stroke-width="1.8" opacity=".67"/>
+                  <path d="M943 63 C952 56 963 58 970 66 C978 75 980 86 988 94" stroke="#6b3925" stroke-width="2" opacity=".75"/>
+                </g>
+                <path d="M925 173 C985 160 1044 171 1109 157 L1108 365 C1040 379 985 365 920 378 Z" fill="url(#shine)" stroke="none"/>
+              </g>
+              <path d="M92 147 C143 137 197 145 256 141 C314 137 360 149 423 144 C493 138 542 147 605 143 C680 138 732 145 795 141 C867 136 922 145 981 139 C1038 133 1088 141 1111 151 L1105 366 C1057 381 1010 370 956 376 C900 383 847 370 790 376 C726 383 676 370 612 376 C550 382 493 370 430 376 C365 383 316 371 254 377 C191 383 137 376 94 367 Z" fill="none" stroke="#e2b47f" stroke-opacity=".52" stroke-width="2"/>
+              <g class="offcut-mask">
+                <rect x="0" y="120" width="1200" height="300" fill="url(#hatch)"/>
+              </g>
+              <g class="ruler">
+                <path d="M95 435 H1105" stroke="#605a4e" stroke-width="1"/>
+                <path d="M95 428 V443 M239 430 V440 M384 430 V440 M528 430 V440 M672 430 V440 M817 430 V440 M961 428 V443 M1105 428 V443" stroke="#796f5e" stroke-width="1"/>
+                <text x="95" y="467">0</text><text x="239" y="467">12</text><text x="384" y="467">24</text><text x="528" y="467">36</text><text x="672" y="467">48</text><text x="817" y="467">60</text><text x="961" y="467">72</text><text x="1105" y="467" text-anchor="end">84</text>
+                <text x="1105" y="467" text-anchor="end">INCHES</text>
+              </g>
+              <g class="cut-mark">
+                <path d="M0 123 V411" class="cut-line"/>
+                <path d="M-10 123 L0 110 L10 123 Z" class="cut-tip"/>
+                <rect x="-52" y="91" width="104" height="24" rx="12" class="cut-label-bg"/>
+                <text x="0" y="107" class="cut-label">72 IN</text>
+              </g>
+              <text x="95" y="510" class="svg-caption">NATURAL EDGE / TOP VIEW</text>
+              <text x="1105" y="510" text-anchor="end" class="svg-caption">KNOT APPROX. 82 IN</text>
+            </svg>
+            <div class="stage-callout knot-callout"><span class="callout-mark">✳</span><span>the fork knot</span><span class="callout-line"></span></div>
+          </div>
+
+          <div class="view-panel table-panel" id="table-panel" aria-label="Three-dimensional preview of the selected walnut table">
+            <div class="table-scene">
+              <div class="scene-label scene-label-left"><span>01 / PERSPECTIVE</span><span>CLARO WALNUT</span></div>
+              <div class="table-wrap">
+                <svg class="table-art" viewBox="0 0 920 560" role="img" aria-labelledby="table-title table-desc">
+                  <title id="table-title">Configured walnut dining table</title>
+                  <desc id="table-desc">A three-dimensional table made from the same illustrated walnut slab, with the chosen length and base.</desc>
+                  <defs>
+                    <linearGradient id="tableTop" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0" stop-color="#bb8157"/><stop offset=".5" stop-color="#9a603b"/><stop offset="1" stop-color="#74462d"/>
+                    </linearGradient>
+                    <linearGradient id="tableSide" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0" stop-color="#72462e"/><stop offset="1" stop-color="#493020"/>
+                    </linearGradient>
+                    <clipPath id="tabletop-clip"><path d="M150 186 L682 164 L812 232 L228 270 Z"/></clipPath>
+                  </defs>
+                  <g id="table-object">
+                  <ellipse cx="462" cy="452" rx="312" ry="30" fill="#2d251f" opacity=".15"/>
+                  <g class="table-base trestle-base">
+                    <path d="M270 266 L326 264 L250 424 L194 424 Z" fill="#6a442c"/>
+                    <path d="M285 269 L316 268 L240 421 L211 421 Z" fill="#81583a"/>
+                    <path d="M610 245 L668 242 L738 424 L678 424 Z" fill="#6a442c"/>
+                    <path d="M618 248 L652 247 L724 421 L690 421 Z" fill="#81583a"/>
+                    <path d="M220 366 H704 L723 385 H212 Z" fill="#4e3322"/>
+                  </g>
+                  <g class="table-base steel-base">
+                    <path d="M270 266 L292 265 L250 424 L228 424 Z" fill="#555a56"/>
+                    <path d="M638 244 L660 243 L690 424 L668 424 Z" fill="#555a56"/>
+                    <path d="M215 418 H257 V429 H215 Z M663 418 H705 V429 H663 Z" fill="#747a73"/>
+                    <path d="M275 286 H651 L651 296 H275 Z" fill="#39413e"/>
+                  </g>
+                  <path d="M130 189 L688 155 L832 233 L225 287 Z" fill="#d2ad7d" opacity=".24"/>
+                  <path d="M228 270 L812 232 L806 264 L225 302 Z" fill="url(#tableSide)"/>
+                  <path d="M682 164 L812 232 L806 264 L676 194 Z" fill="#5e3926"/>
+                  <path d="M150 186 L228 270 L225 302 L150 219 Z" fill="#b2784c"/>
+                  <path d="M150 186 L682 164 L812 232 L228 270 Z" fill="url(#tableTop)" stroke="#4c2e20" stroke-width="3"/>
+                  <image href="assets/walnut-surface.svg" x="150" y="190" width="662" height="106" preserveAspectRatio="none" clip-path="url(#tabletop-clip)"/>
+                  <g class="table-knot" fill="none" stroke-linecap="round">
+                    <path d="M633 206 C648 202 662 208 669 220 C675 229 678 232 685 235 C676 233 671 226 665 219 C658 212 648 211 640 217 C633 223 633 231 640 236 C646 241 657 240 665 236" stroke="#422619" stroke-width="9" opacity=".82"/>
+                    <path d="M633 206 C648 202 662 208 669 220 C675 229 678 232 685 235 C676 233 671 226 665 219 C658 212 648 211 640 217 C633 223 633 231 640 236 C646 241 657 240 665 236" stroke="#d99a62" stroke-width="2.2" opacity=".9"/>
+                    <path d="M638 207 C651 205 661 211 666 222 C670 230 675 233 681 236" stroke="#f2c38c" stroke-width="1.4" opacity=".72"/>
+                    <path d="M641 222 C647 217 655 218 660 224 C665 230 667 235 672 238" stroke="#6b3925" stroke-width="1.5" opacity=".8"/>
+                  </g>
+                  <path d="M150 181 L682 159 L816 231" fill="none" stroke="#f0c695" stroke-width="2" opacity=".72"/>
+                  <path d="M150 186 L682 164 L812 232" fill="none" stroke="#f8dbb8" stroke-opacity=".45" stroke-width="1"/>
+                  </g>
+                </svg>
+              </div>
+              <div class="scene-label scene-label-right"><span class="scene-length">72 IN</span><span class="scene-base-name">TIMBER TRESTLE</span></div>
+              <div class="scene-shadow-line"></div>
+            </div>
+            <div class="table-detail">
+              <span class="detail-kicker">THE FINISHED PIECE</span>
+              <span>Same slab. Same grain. Your chosen cut.</span>
+              <span class="table-length-note">72 inches long</span>
+            </div>
+          </div>
+          <div class="stage-footer"><span class="stage-caption">CUTLINE / SLAB 07</span><span class="stage-state">YOUR CUT, DRAWN TO SCALE</span><span class="stage-corner">01—02</span></div>
+        </div>
+
+        <div class="controls">
+          <div class="length-control">
+            <div class="control-title-row">
+              <label for="length-range">Finished length</label>
+              <output class="length-output" for="length-range" id="length-output">72<span> in</span></output>
+            </div>
+            <input id="length-range" type="range" min="72" max="84" step="6" value="72" aria-label="Finished table length, inches">
+            <div class="range-labels"><span>72 in</span><span>78 in</span><span>84 in</span></div>
+            <p class="length-note" id="length-note">At 72 inches, the fork knot stays in the offcut.</p>
+          </div>
+          <div class="base-control">
+            <p class="control-label">Choose a base</p>
+            <div class="base-options" role="group" aria-label="Table base">
+              <button type="button" class="base-option is-selected" data-base="trestle" aria-pressed="true"><span class="base-icon trestle-icon" aria-hidden="true"><i></i><i></i><i></i></span><span>Timber trestle</span><span class="option-check" aria-hidden="true">✓</span></button>
+              <button type="button" class="base-option" data-base="steel" aria-pressed="false"><span class="base-icon steel-icon" aria-hidden="true"><i></i><i></i></span><span>Blackened steel</span><span class="option-check" aria-hidden="true">✓</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="fiction-note"><span>NOTE</span> Slab 07, its dimensions, and the furniture maker shown here are fictional. This is a local HWS portfolio demonstration, not an available product.</p>
+    </section>
+
+    <section class="story section-wrap" id="how-it-works">
+      <div class="story-head">
+        <p class="eyebrow"><span class="eyebrow-line"></span> From board to room</p>
+        <h2>One piece of wood.<br><em>One less guess.</em></h2>
+      </div>
+      <div class="story-steps">
+        <article class="story-step"><span class="step-number">01</span><div><h3>Choose the cut</h3><p>Move the line and see which details stay. A couple can compare lengths together, right there in the showroom.</p></div><span class="step-mark">↗</span></article>
+        <article class="story-step"><span class="step-number">02</span><div><h3>See it on its feet</h3><p>Turn the same slab into a table. Change the base without losing the exact piece of walnut you picked.</p></div><span class="step-mark">↗</span></article>
+        <article class="story-step"><span class="step-number">03</span><div><h3>Take the choice home</h3><p>Save a project card with the slab, dimensions, and base, then return to that configuration from any device.</p></div><span class="step-mark">↗</span></article>
+      </div>
+    </section>
+
+    <section class="project-section" id="project-card">
+      <div class="project-layout section-wrap">
+        <div class="project-intro">
+          <p class="eyebrow"><span class="eyebrow-line"></span> Your table, in a note</p>
+          <h2>A good choice<br>is easy to <em>come back to.</em></h2>
+          <p>Keep a small record of this design. Your saved link reopens the same cut and base.</p>
+          <div class="project-actions">
+            <button class="button button-dark" id="save-design" type="button">Save this design <span aria-hidden="true">↗</span></button>
+            <button class="text-button" id="copy-brief" type="button">Copy project brief</button>
+          </div>
+          <p class="action-feedback" id="action-feedback" aria-live="polite"></p>
+        </div>
+        <article class="design-card" aria-label="Your table design summary">
+          <div class="card-topline"><span>CUTLINE / PROJECT NOTE</span><span class="card-status"><i></i> SAMPLE</span></div>
+          <div class="card-heading"><span class="card-kicker">SLAB 07 · CLARO WALNUT</span><strong>Your cut, so far.</strong></div>
+          <div class="card-drawing" aria-hidden="true"><span class="mini-board"></span><span class="mini-measure" id="card-mini-length">72″</span><span class="mini-base"></span></div>
+          <dl class="design-specs">
+            <div><dt>Finished length</dt><dd id="card-length">72 inches</dd></div>
+            <div><dt>Base</dt><dd id="card-base">Timber trestle</dd></div>
+            <div><dt>Grain detail</dt><dd id="card-knot">Fork knot offcut</dd></div>
+          </dl>
+          <div class="card-foot"><span>MADE TO MEASURE</span><span>OREGON · DEMO</span></div>
+        </article>
+      </div>
+      <div class="quote-handoff section-wrap">
+        <span class="quote-mark">“</span>
+        <div><h3>Ask about this table.</h3><p>In a real showroom, this card would go to the maker with your quote request. This demo keeps everything on your device.</p></div>
+        <a href="#configurator" class="quote-link">Adjust the design <span aria-hidden="true">↑</span></a>
+      </div>
+    </section>
+
+    <section class="scope-section section-wrap" aria-label="Hillsboro Web Studio proposal">
+      <div class="scope-top"><span>HWS / PROJECT STUDY</span><span>01 OF 01</span></div>
+      <div class="scope-content">
+        <p class="eyebrow"><span class="eyebrow-line"></span> An ambitious digital showroom</p>
+        <h2>Built around the thing<br>they actually <em>make.</em></h2>
+        <div class="scope-detail"><p>A full version could prepare up to twelve real slabs, add a simple inventory editor, and send saved project cards straight to the maker.</p><div class="scope-price"><span>PROPOSED FIXED PROJECT</span><strong>$10,000</strong></div></div>
+      </div>
+      <div class="scope-includes"><span>ART DIRECTION</span><span>SLAB PHOTOGRAPHY</span><span>MOBILE CONFIGURATOR</span><span>INVENTORY + QUOTE HANDOFF</span></div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><a class="wordmark footer-mark" href="#top"><span class="mark" aria-hidden="true">C<span>/</span></span><span>CUTLINE<small>WOODWORKS · OREGON</small></span></a><span>FICTIONAL SHOWROOM STUDY</span><a href="#top">Back to top ↑</a></footer>
+  <script src="app.js"></script>
+</body>
+</html>
